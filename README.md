@@ -1,5 +1,7 @@
 # RetinaFace in PyTorch
 
+
+###  Face Detection
 *Disclaimer*: This repository is forked from https://github.com/biubug6/Pytorch_Retinaface. I've added a code for webcam detection. This great work doesn't belong to me. 
 
 Pipeline to run this source code: 
@@ -9,6 +11,23 @@ Pipeline to run this source code:
 ```bash
 python detect_webcam.py
 ```
+
+###  Face Recognition 
+Pretrained model for arcface: [LINK](https://drive.google.com/drive/folders/1TTikSN2Z9iHOxavvoiaQfUup98XdcPeM) 
+Save the weight at `weights/backbone_ir50_asia.pth`
+The original code I borrowed from @ducviet00 - https://github.com/ducviet00/face-recognition-realtime. Thank you @ducviet00 for this wonderful job. 
+
+There are a variety of supported models:  
+['IR_50', 'IR_101', 'IR_152', 'IR_SE_50', 'IR_SE_101', 'IR_SE_152']
+Here I used IR_50 for implementation.
+
+```bash
+python recognizer.py
+```
+
+It depends on your GPU device, with GTX 1660, I got 0.0107 ms  (93 FPS) for one face only. 
+
+
 
 A [PyTorch](https://pytorch.org/) implementation of [RetinaFace: Single-stage Dense Face Localisation in the Wild](https://arxiv.org/abs/1905.00641). Model size only 1.7M, when Retinaface use mobilenet0.25 as backbone net. We also provide resnet50 as backbone net to get better result. The official code in Mxnet can be found [here](https://github.com/deepinsight/insightface/tree/master/RetinaFace).
 
