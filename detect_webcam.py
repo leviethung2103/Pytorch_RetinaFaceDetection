@@ -99,8 +99,12 @@ if __name__ == "__main__":
         if frame is None:
             continue
 
+        frame = cv2.resize(frame,(640,480))
+
         img = np.float32(frame)
         im_height, im_width, _ = img.shape
+        print (im_height)
+        print (im_width)
         scale = torch.Tensor([img.shape[1], img.shape[0], img.shape[1], img.shape[0]])
         img -= (104, 117, 123)
         img = img.transpose(2, 0, 1)

@@ -9,8 +9,13 @@ Pipeline to run this source code:
 [Google Drive](https://drive.google.com/open?id=1oZRSG0ZegbVkVwUd8wUIQx8W7yfZ_ki1)
 * Run the code 
 ```bash
-python detect_webcam.py
+# retina Resnet50.pth
+python3 detect_webcam.py 
+# mobilnet0.25 version 
+python3 detect_webcam.py --network mobile0.25 --trained_model ./weights/mobilenet0.25_Final.pth 
 ```
+
+At Jetson Nano, forward time is approximately 0.0579 ms ~ 17 FPS without NMS and post processing. Based on my observation, it is quite slow in comparison with MTCNN.
 
 ###  Face Recognition 
 Pretrained model for arcface: [LINK](https://drive.google.com/drive/folders/1TTikSN2Z9iHOxavvoiaQfUup98XdcPeM) 
